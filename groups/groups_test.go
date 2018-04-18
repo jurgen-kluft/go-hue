@@ -2,10 +2,11 @@ package groups
 
 import (
 	"fmt"
-	"github.com/heatxsink/go-hue/lights"
 	"os"
 	"testing"
 	"time"
+
+	"github.com/jurgen-kluft/go-hue/lights"
 )
 
 var (

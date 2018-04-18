@@ -5,9 +5,10 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/heatxsink/go-hue/hue"
 	"io/ioutil"
 	"net/http"
+
+	"github.com/jurgen-kluft/go-hue/hue"
 )
 
 var (

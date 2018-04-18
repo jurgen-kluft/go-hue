@@ -4,12 +4,13 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/heatxsink/go-hue/hue"
-	"github.com/heatxsink/go-hue/lights"
 	"io/ioutil"
 	"net/http"
 	"strconv"
 	"strings"
+
+	"github.com/jurgen-kluft/go-hue/hue"
+	"github.com/jurgen-kluft/go-hue/lights"
 )
 
 var (
@@ -28,6 +29,7 @@ type Groups struct {
 
 type Group struct {
 	ID     int          `json:"id,omitempty"`
+	Type   string       `json:"type,omitempty"`
 	Name   string       `json:"name"`
 	Action lights.State `json:"action,omitempty"`
 	Lights []string     `json:"lights,omitempty"`

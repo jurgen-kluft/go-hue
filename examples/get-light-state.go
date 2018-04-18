@@ -3,11 +3,12 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/heatxsink/go-hue/groups"
-	"github.com/heatxsink/go-hue/lights"
-	"github.com/heatxsink/go-hue/portal"
 	"os"
 	"time"
+
+	"github.com/jurgen-kluft/go-hue/groups"
+	"github.com/jurgen-kluft/go-hue/lights"
+	"github.com/jurgen-kluft/go-hue/portal"
 )
 
 var (

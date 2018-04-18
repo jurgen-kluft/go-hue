@@ -3,12 +3,13 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"github.com/heatxsink/go-hue/configuration"
-	"github.com/heatxsink/go-hue/portal"
 	"net"
 	"net/url"
 	"os"
 	"strings"
+
+	"github.com/jurgen-kluft/go-hue/configuration"
+	"github.com/jurgen-kluft/go-hue/portal"
 )
 
 func ssdpDiscover() string {
