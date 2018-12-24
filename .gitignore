@@ -1,27 +1,16 @@
-# Compiled Object files, Static and Dynamic libs (Shared Objects)
-*.o
-*.a
-*.so
-*.conf
-
-# Folders
-_obj
-_test
-lib
-bin
-log
-vendor
-
-# Architecture specific extensions/prefixes
-*.[568vq]
-[568vq].out
-
-*.cgo1.go
-*.cgo2.c
-_cgo_defun.c
-_cgo_gotypes.go
-_cgo_export.*
-
-_testmain.go
-
+#ignore all files
+*
+vendor/
+tags
 *.exe
+*.exe~
+
+#except the following files
+!*.cpp
+!*.hpp
+!*.c
+!*.h
+!*.inl
+
+!*.go
+!*.json

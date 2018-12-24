@@ -33,12 +33,12 @@ type Light struct {
 }
 
 type State struct {
-	On             bool      `json:"on"`
+	On             *bool     `json:"on"`
 	Hue            uint16    `json:"hue,omitempty"`
 	Effect         string    `json:"effect,omitempty"`
-	Bri            uint8     `json:"bri,omitempty"`
+	Bri            *uint8    `json:"bri,omitempty"`
 	Sat            uint8     `json:"sat,omitempty"`
-	CT             uint16    `json:"ct,omitempty"`
+	CT             *uint16   `json:"ct,omitempty"`
 	XY             []float32 `json:"xy,omitempty"`
 	Alert          string    `json:"alert,omitempty"`
 	TransitionTime uint16    `json:"transitiontime,omitempty"`
@@ -178,12 +178,18 @@ func (l *Light) String() string {
 
 func (s *State) String() string {
 	var buffer bytes.Buffer
-	buffer.WriteString(fmt.Sprintf("On:              %t\n", s.On))
+	if s.On != nil {
+		buffer.WriteString(fmt.Sprintf("On:              %t\n", s.On))
+	}
 	buffer.WriteString(fmt.Sprintf("Hue:             %d\n", s.Hue))
 	buffer.WriteString(fmt.Sprintf("Effect:          %s\n", s.Effect))
-	buffer.WriteString(fmt.Sprintf("Bri:             %d\n", s.Bri))
+	if s.Bri != nil {
+		buffer.WriteString(fmt.Sprintf("Bri:             %d\n", s.Bri))
+	}
 	buffer.WriteString(fmt.Sprintf("Sat:             %d\n", s.Sat))
-	buffer.WriteString(fmt.Sprintf("CT:              %d\n", s.CT))
+	if s.CT != nil {
+		buffer.WriteString(fmt.Sprintf("CT:              %d\n", s.CT))
+	}
 	if len(s.XY) > 0 {
 		buffer.WriteString(fmt.Sprintf("XY:              %g, %g\n", s.XY[0], s.XY[1]))
 	}

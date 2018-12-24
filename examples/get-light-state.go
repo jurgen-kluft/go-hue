@@ -23,7 +23,9 @@ func usage() {
 }
 
 func init() {
-	blinkState = lights.State{On: true, Alert: "lselect"}
+	on := new(bool)
+	*on = true
+	blinkState = lights.State{On: on, Alert: "lselect"}
 	flag.StringVar(&apiKey, "key", os.Getenv("HUE_USERNAME"), "hue light api key")
 	flag.Parse()
 	flag.Usage = usage
